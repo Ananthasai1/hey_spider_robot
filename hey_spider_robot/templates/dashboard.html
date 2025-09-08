@@ -12,29 +12,12 @@
             box-sizing: border-box;
         }
         
-        :root {
-            --bg-primary: #121212;
-            --bg-secondary: #1e1e1e;
-            --bg-tertiary: #252525;
-            --accent-primary: #00e5ff;
-            --accent-secondary: #ff2a6d;
-            --text-primary: #ffffff;
-            --text-secondary: #b3b3b3;
-            --success: #00c853;
-            --warning: #ffab00;
-            --error: #ff1744;
-            --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-            --card-radius: 12px;
-            --transition: all 0.3s ease;
-        }
-        
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: var(--bg-primary);
-            color: var(--text-primary);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
             min-height: 100vh;
             padding: 20px;
-            line-height: 1.6;
         }
         
         .container {
@@ -45,114 +28,65 @@
         .header {
             text-align: center;
             margin-bottom: 30px;
-            padding: 25px;
-            background: var(--bg-secondary);
-            border-radius: var(--card-radius);
-            box-shadow: var(--card-shadow);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+            padding: 20px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
         }
         
         .header h1 {
-            font-size: 2.8rem;
+            font-size: 2.5em;
             margin: 0;
-            background: linear-gradient(45deg, var(--accent-primary), var(--accent-secondary));
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            background: linear-gradient(45deg, #fff, #ffd700);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            font-weight: 800;
-            letter-spacing: 1px;
         }
         
         .header p {
-            margin-top: 12px;
-            color: var(--text-secondary);
-            font-size: 1.1rem;
+            margin-top: 10px;
+            opacity: 0.9;
         }
         
         .connection-status {
-            padding: 12px;
+            padding: 10px;
             border-radius: 8px;
             text-align: center;
-            margin: 15px auto;
+            margin: 10px 0;
             font-weight: bold;
-            max-width: 300px;
-            background: var(--bg-tertiary);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-        }
-        
-        .connection-status::before {
-            content: '';
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            display: inline-block;
         }
         
         .connected {
-            color: var(--success);
-            border: 1px solid rgba(0, 200, 83, 0.3);
-        }
-        
-        .connected::before {
-            background: var(--success);
-            box-shadow: 0 0 8px var(--success);
+            background: rgba(76, 175, 80, 0.3);
+            color: #4CAF50;
         }
         
         .disconnected {
-            color: var(--error);
-            border: 1px solid rgba(255, 23, 68, 0.3);
-        }
-        
-        .disconnected::before {
-            background: var(--error);
-            box-shadow: 0 0 8px var(--error);
+            background: rgba(244, 67, 54, 0.3);
+            color: #f44336;
         }
         
         .dashboard {
             display: grid;
             grid-template-columns: 2fr 1fr 1fr;
             grid-template-rows: auto auto auto;
-            gap: 25px;
+            gap: 20px;
         }
         
         .panel {
-            background: var(--bg-secondary);
-            border-radius: var(--card-radius);
-            padding: 25px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            box-shadow: var(--card-shadow);
-            transition: var(--transition);
-            height: fit-content;
-        }
-        
-        .panel:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 20px;
+            border: 1px solid rgba(255,255,255,0.2);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
         }
         
         .panel h3 {
-            margin-bottom: 20px;
-            color: var(--accent-primary);
-            padding-bottom: 12px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: #fff;
+            border-bottom: 2px solid rgba(255,255,255,0.3);
+            padding-bottom: 8px;
         }
         
         .video-panel {
@@ -162,44 +96,36 @@
         #videoFeed {
             width: 100%;
             max-width: 640px;
-            border-radius: 8px;
+            border-radius: 10px;
             display: block;
             margin: 0 auto;
             background: #000;
             min-height: 240px;
-            box-shadow: 0 0 20px rgba(0, 229, 255, 0.1);
-            border: 1px solid rgba(0, 229, 255, 0.2);
         }
         
         .controls {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
-            gap: 15px;
-            margin-top: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 10px;
+            margin-top: 20px;
         }
         
         .btn {
-            padding: 14px 20px;
+            padding: 12px 20px;
             border: none;
             border-radius: 8px;
-            background: linear-gradient(45deg, var(--bg-tertiary), var(--bg-secondary));
-            color: var(--text-primary);
+            background: linear-gradient(45deg, #4CAF50, #45a049);
+            color: white;
             font-size: 16px;
-            font-weight: 600;
+            font-weight: bold;
             cursor: pointer;
-            transition: var(--transition);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
         }
         
         .btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(0, 229, 255, 0.2);
-            border-color: rgba(0, 229, 255, 0.3);
+            box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
         }
         
         .btn:active {
@@ -216,98 +142,60 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin: 12px 0;
-            padding: 14px;
-            background: var(--bg-tertiary);
+            margin: 10px 0;
+            padding: 12px;
+            background: rgba(255,255,255,0.1);
             border-radius: 8px;
-            border-left: 4px solid var(--accent-primary);
-            transition: var(--transition);
-        }
-        
-        .status-item:hover {
-            transform: translateX(5px);
+            border-left: 4px solid #4CAF50;
         }
         
         .status-value {
             font-weight: bold;
-            color: var(--accent-primary);
+            color: #ffd700;
         }
         
         .detection-list {
             max-height: 200px;
             overflow-y: auto;
             scrollbar-width: thin;
-            scrollbar-color: var(--accent-primary) var(--bg-tertiary);
-        }
-        
-        .detection-list::-webkit-scrollbar {
-            width: 6px;
-        }
-        
-        .detection-list::-webkit-scrollbar-track {
-            background: var(--bg-tertiary);
-            border-radius: 3px;
-        }
-        
-        .detection-list::-webkit-scrollbar-thumb {
-            background: var(--accent-primary);
-            border-radius: 3px;
         }
         
         .detection-item {
             display: flex;
             justify-content: space-between;
-            margin: 10px 0;
-            padding: 10px 14px;
-            background: var(--bg-tertiary);
+            margin: 8px 0;
+            padding: 8px 12px;
+            background: rgba(0,0,0,0.2);
             border-radius: 6px;
-            transition: var(--transition);
-        }
-        
-        .detection-item:hover {
-            background: rgba(0, 229, 255, 0.1);
         }
         
         .confidence {
-            color: var(--accent-secondary);
+            color: #4CAF50;
             font-weight: bold;
         }
         
         .ai-thought {
             font-style: italic;
-            background: var(--bg-tertiary);
-            padding: 20px;
+            background: rgba(0,0,0,0.3);
+            padding: 15px;
             border-radius: 10px;
-            margin: 15px 0;
-            border-left: 4px solid var(--accent-secondary);
-            min-height: 80px;
-            position: relative;
-            transition: var(--transition);
-        }
-        
-        .ai-thought::before {
-            content: '"';
-            font-size: 3rem;
-            color: var(--accent-secondary);
-            opacity: 0.3;
-            position: absolute;
-            top: 5px;
-            left: 10px;
+            margin: 10px 0;
+            border-left: 4px solid #9C27B0;
+            min-height: 60px;
         }
         
         .oled-display {
             background: #000;
-            color: var(--accent-primary);
+            color: #0ff;
             font-family: 'Courier New', monospace;
-            padding: 20px;
+            padding: 15px;
             border-radius: 8px;
-            font-size: 14px;
-            line-height: 1.5;
-            height: 170px;
+            font-size: 12px;
+            line-height: 1.4;
+            height: 150px;
             overflow: hidden;
-            border: 2px solid var(--accent-primary);
-            box-shadow: inset 0 0 15px rgba(0, 229, 255, 0.2), 0 0 15px rgba(0, 229, 255, 0.1);
-            text-shadow: 0 0 5px var(--accent-primary);
+            border: 2px solid #0ff;
+            box-shadow: inset 0 0 10px rgba(0, 255, 255, 0.3);
         }
         
         .voice-commands {
@@ -316,21 +204,15 @@
         
         .command-list {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 15px;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
         }
         
         .command-item {
-            padding: 15px;
-            background: var(--bg-tertiary);
-            border-radius: 8px;
-            border-left: 4px solid var(--accent-secondary);
-            transition: var(--transition);
-        }
-        
-        .command-item:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(255, 42, 109, 0.1);
+            padding: 10px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 6px;
+            border-left: 3px solid #FF5722;
         }
         
         .pulse {
@@ -338,28 +220,9 @@
         }
         
         @keyframes pulse {
-            0% { 
-                box-shadow: 0 0 0 0 rgba(0, 229, 255, 0.4);
-            }
-            70% { 
-                box-shadow: 0 0 0 10px rgba(0, 229, 255, 0);
-            }
-            100% { 
-                box-shadow: 0 0 0 0 rgba(0, 229, 255, 0);
-            }
-        }
-        
-        .glow {
-            animation: glow 1.5s ease-in-out infinite alternate;
-        }
-        
-        @keyframes glow {
-            from {
-                box-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px var(--accent-primary), 0 0 20px var(--accent-primary);
-            }
-            to {
-                box-shadow: 0 0 10px #fff, 0 0 15px var(--accent-primary), 0 0 20px var(--accent-primary), 0 0 25px var(--accent-primary);
-            }
+            0% { opacity: 1; }
+            50% { opacity: 0.5; }
+            100% { opacity: 1; }
         }
         
         @media (max-width: 1200px) {
@@ -384,14 +247,6 @@
             }
             .voice-commands {
                 grid-column: span 1;
-            }
-            
-            .header h1 {
-                font-size: 2.2rem;
-            }
-            
-            .controls {
-                grid-template-columns: repeat(2, 1fr);
             }
         }
     </style>
@@ -489,7 +344,7 @@
             <!-- Voice Commands -->
             <div class="panel voice-commands">
                 <h3>🎙️ Voice Commands</h3>
-                <p style="margin-bottom: 15px; color: var(--text-secondary);">Say <strong style="color: var(--accent-secondary);">"Hey Spider"</strong> followed by:</p>
+                <p style="margin-bottom: 15px;">Say <strong>"Hey Spider"</strong> followed by:</p>
                 <div class="command-list">
                     <div class="command-item">
                         <strong>Movement:</strong><br>
@@ -513,64 +368,54 @@
     </div>
     
     <script>
-        // Simulate robot data for demonstration (since we don't have actual robot connection)
+        // Initialize Socket.IO connection
+        const socket = io();
         let isConnected = false;
         let commandInProgress = false;
-        let simulationData = {
-            distance: 25.7,
-            is_moving: false,
-            detections: [
-                {class: "person", confidence: 0.89},
-                {class: "book", confidence: 0.76}
-            ],
-            emotional_state: "curious",
-            ai_thought: "I wonder what that person is doing with that book..."
-        };
         
         // Connection status
         const statusElement = document.getElementById('connectionStatus');
         
-        // Simulate connection after a delay
-        setTimeout(() => {
+        socket.on('connect', function() {
+            console.log('Connected to robot');
             isConnected = true;
-            statusElement.textContent = 'Connected to Hey Spider Robot';
+            statusElement.textContent = '🟢 Connected to Hey Spider Robot';
             statusElement.className = 'connection-status connected';
             document.getElementById('aiStatus').textContent = 'Online';
-            
-            // Start simulation updates
-            setInterval(updateSimulation, 2000);
-            updateSimulation(); // Initial update
-        }, 3000);
+        });
         
-        function updateSimulation() {
-            // Simulate changing data
-            simulationData.distance = 15 + Math.random() * 30;
-            simulationData.emotional_state = ['curious', 'excited', 'focused', 'playful'][Math.floor(Math.random() * 4)];
-            
-            const thoughts = [
-                "I wonder what that person is doing with that book...",
-                "The lighting in this room is quite nice.",
-                "I should explore that corner over there.",
-                "My sensors are picking up interesting patterns.",
-                "Time for some spider adventures!"
-            ];
-            simulationData.ai_thought = thoughts[Math.floor(Math.random() * thoughts.length)];
+        socket.on('disconnect', function() {
+            console.log('Disconnected from robot');
+            isConnected = false;
+            statusElement.textContent = '🔴 Disconnected from Robot';
+            statusElement.className = 'connection-status disconnected';
+            document.getElementById('aiStatus').textContent = 'Offline';
+        });
+        
+        // Real-time status updates
+        socket.on('status_update', function(data) {
+            // Update video feed
+            if (data.video_frame) {
+                document.getElementById('videoFeed').src = 'data:image/jpeg;base64,' + data.video_frame;
+            }
             
             // Update status information
-            document.getElementById('distance').textContent = simulationData.distance.toFixed(1) + ' cm';
-            document.getElementById('moving').textContent = simulationData.is_moving ? 'Yes' : 'No';
-            document.getElementById('detectionCount').textContent = simulationData.detections.length;
-            document.getElementById('emotionalState').textContent = simulationData.emotional_state;
+            document.getElementById('distance').textContent = data.distance.toFixed(1) + ' cm';
+            document.getElementById('moving').textContent = data.is_moving ? 'Yes' : 'No';
+            document.getElementById('detectionCount').textContent = data.detections.length;
+            document.getElementById('emotionalState').textContent = data.emotional_state || 'curious';
             
             // Update AI thought
-            document.getElementById('aiThought').textContent = '"' + simulationData.ai_thought + '"';
+            if (data.ai_thought) {
+                document.getElementById('aiThought').textContent = '"' + data.ai_thought + '"';
+            }
             
             // Update OLED display simulation
-            updateOLEDDisplay(simulationData);
+            updateOLEDDisplay(data);
             
             // Update detections
-            updateDetections(simulationData.detections);
-        }
+            updateDetections(data.detections);
+        });
         
         function updateOLEDDisplay(data) {
             const oledDisplay = document.getElementById('oledDisplay');
@@ -650,16 +495,12 @@
             });
             
             console.log('Sending command:', command);
-            
-            // Simulate command execution
-            simulationData.is_moving = true;
-            document.getElementById('moving').textContent = 'Yes';
-            document.getElementById('mode').textContent = 'MOVING';
+            socket.emit('command', {command: command});
             
             // Visual feedback
             const activeBtn = event ? event.target : null;
             if (activeBtn) {
-                activeBtn.style.background = `linear-gradient(45deg, #ff2a6d, #c2185b)`;
+                activeBtn.style.background = 'linear-gradient(45deg, #FF5722, #E64A19)';
             }
             
             // Re-enable buttons after delay
@@ -669,14 +510,18 @@
                     btn.classList.remove('pulse');
                 });
                 if (activeBtn) {
-                    activeBtn.style.background = 'linear-gradient(45deg, var(--bg-tertiary), var(--bg-secondary))';
+                    activeBtn.style.background = 'linear-gradient(45deg, #4CAF50, #45a049)';
                 }
                 commandInProgress = false;
-                simulationData.is_moving = false;
-                document.getElementById('moving').textContent = 'No';
-                document.getElementById('mode').textContent = 'READY';
-            }, 3000);
+            }, 2000);
         }
+        
+        socket.on('command_result', function(result) {
+            console.log('Command result:', result);
+            if (!result.success) {
+                alert('Command failed: ' + result.message);
+            }
+        });
         
         // Keyboard shortcuts
         document.addEventListener('keydown', function(event) {
@@ -704,6 +549,13 @@
                     break;
             }
         });
+        
+        // Initialize connection status
+        setTimeout(() => {
+            if (!isConnected) {
+                statusElement.textContent = '🟡 Attempting to connect...';
+            }
+        }, 3000);
     </script>
 </body>
 </html>
